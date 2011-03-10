@@ -19,7 +19,6 @@ ext/common/libpassenger_common
 ext/apache2/module_libboost_oxt
 ext/apache2/module_libpassenger_common
 ext/libev/Makefile
-ext/libev/config.h
 ext/libev/config.log
 ext/libev/config.status
 ext/libev/libtool
@@ -32,14 +31,12 @@ ext/ruby/*/mkmf.log
 ext/*.a
 doc/rdoc
 doc/cxxapi
-doc/*.html
 test/test.log
 test/apache2.log
 test/config.yml
 test/coverage
 test/cxx/CxxTestMain
 test/oxt/oxt_test_main
-test/stub/apache2/*.log
 test/stub/apache2/*.pid
 test/stub/apache2/httpd.conf
 test/stub/zsfa/mycook
