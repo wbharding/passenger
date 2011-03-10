@@ -195,7 +195,7 @@ struct DirConfig {
 	/**
 	 * Whether analytics logging should be enabled.
 	 */
-	Threeway unionStationSupport;
+	Threeway analytics;
 	
 	/*************************************/
 	/*************************************/
@@ -329,8 +329,8 @@ struct DirConfig {
 		return friendlyErrorPages != DISABLED;
 	}
 	
-	bool useUnionStation() const {
-		return unionStationSupport == ENABLED;
+	bool analyticsEnabled() const {
+		return analytics == ENABLED;
 	}
 	
 	string getUnionStationFilterString() const {

@@ -5,7 +5,6 @@
 *.o
 *.so
 *.bundle
-*.pyc
 *.a
 *.lo
 *.la

@@ -237,8 +237,6 @@ private:
 	/** The application pool that's being exposed through the socket. */
 	ApplicationPool::Ptr pool;
 	
-	AnalyticsLoggerPtr analyticsLogger;
-	
 	
 	/*********************************************
 	 * Message handler methods
@@ -276,7 +274,7 @@ private:
 		commonContext.requireRights(Account::GET);
 		
 		try {
-			PoolOptions options(args, 1, analyticsLogger);
+			PoolOptions options(args, 1);
 			options.environmentVariables = ptr(new EnvironmentVariablesFetcher(
 				commonContext.channel, options));
 			options.initiateSession = false;
@@ -419,9 +417,8 @@ public:
 	 *
 	 * @param pool The pool to expose.
 	 */
-	Server(const ApplicationPool::Ptr &pool, const AnalyticsLoggerPtr &analyticsLogger = AnalyticsLoggerPtr()) {
+	Server(ApplicationPool::Ptr pool) {
 		this->pool = pool;
-		this->analyticsLogger = analyticsLogger;
 	}
 	
 	virtual MessageServer::ClientContextPtr newClient(CommonClientContext &commonContext) {
